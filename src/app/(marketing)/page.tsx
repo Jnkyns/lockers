@@ -179,20 +179,20 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between py-14 px-24 relative">
       <div className="absolute -z-10 inset-0 bg-fuchsia-400 bg-[size:20px_20px] opacity-5 blur-[100px]"></div>
       <div className="p-2 mb-8">
-        <h1 className="text-4xl font-extrabold">
+        <h1 className="text-4xl font-extrabold text-center">
           Facultad de Ingeniería y Ciencias
         </h1>
       </div>
       <div className="flex flex-col space-y-6">
         {data.lockers.map((locker, index) => (
           <div key={index} className="space-y-1">
-            <div className="flex space-x-1">
+            <div className="flex flex-col sm:flex-row sm:space-x-1">
               <h2>Ubicación:</h2>
               <p className="text-muted-foreground">{locker.location}</p>
             </div>
             <div
               key={index}
-              className="grid gap-2 border-4 p-2 rounded-md grid-cols-5"
+              className="min-w-72 grid gap-2 border-4 p-2 rounded-md grid-cols-2 sm:grid-cols-5"
             >
               {locker.slots.map((slot, index) => (
                 <Locker key={index} letter={locker.letter} slot={slot} />

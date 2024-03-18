@@ -21,7 +21,7 @@ export default function Locker({ letter, slot }: Props) {
     <>
       <li
         className={cn(
-          "w-32 h-48 rounded-lg p-2 flex justify-center items-center hover:cursor-pointer",
+          "h-48 rounded-lg p-2 flex justify-center items-center hover:cursor-pointer",
           slot.status === "free" ? "bg-green-400" : "bg-red-400"
         )}
         onClick={() => setIsOpen(true)}

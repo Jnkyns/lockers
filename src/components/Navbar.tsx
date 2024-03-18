@@ -28,10 +28,10 @@ export default function Navbar() {
           >
             <Lock className="size-6" />
             <div className="space-x-px flex flex-row">
-              <span className="hidden text-lg font-bold sm:inline-block">
+              <span className=" text-lg font-bold sm:inline-block">
                 Lockers
               </span>
-              <div className="hidden sm:flex w-8 items-start justify-start">
+              <div className=" sm:flex w-8 items-start justify-start">
                 <span className="font-bold text-muted-foreground text-xs">
                   udp
                 </span>
