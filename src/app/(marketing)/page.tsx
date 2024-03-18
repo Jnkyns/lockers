@@ -5,11 +5,13 @@ const data = {
   lockers: [
     {
       letter: "A",
+      location:
+        "Por Vergara, al lado izquierdo de la sala del Centro de Estudiantes.",
       slots: [
         {
           number: 1,
-          status: "free",
-          student: null,
+          status: "occupied",
+          student: "Bastián Avilés",
         },
         {
           number: 2,
@@ -60,6 +62,7 @@ const data = {
     },
     {
       letter: "B",
+      location: "Por Ejercito, segundo piso, al fondo.",
       slots: [
         {
           number: 1,
@@ -115,6 +118,7 @@ const data = {
     },
     {
       letter: "C",
+      location: "Por Ejercito, segundo piso, al fondo.",
       slots: [
         {
           number: 1,
@@ -175,15 +179,21 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between py-14 px-24 relative">
       <div className="absolute -z-10 inset-0 bg-fuchsia-400 bg-[size:20px_20px] opacity-5 blur-[100px]"></div>
       <div className="p-2 mb-8">
-        <h1 className="text-4xl font-extrabold">Lockers</h1>
+        <h1 className="text-4xl font-extrabold">
+          Facultad de Ingeniería y Ciencias
+        </h1>
       </div>
-      <div className="flex flex-col space-y-4">
+      <div className="flex flex-col space-y-6">
         {data.lockers.map((locker, index) => (
-          <div
-            key={index}
-            className="flex flex-col justify-center items-center border-4 p-2 rounded-md shadow-lg"
-          >
-            <div className="grid gap-2 grid-cols-5">
+          <div key={index} className="space-y-1">
+            <div className="flex space-x-1">
+              <h2>Ubicación:</h2>
+              <p className="text-muted-foreground">{locker.location}</p>
+            </div>
+            <div
+              key={index}
+              className="grid gap-2 border-4 p-2 rounded-md grid-cols-5"
+            >
               {locker.slots.map((slot, index) => (
                 <Locker key={index} letter={locker.letter} slot={slot} />
               ))}

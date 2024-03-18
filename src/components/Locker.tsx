@@ -10,7 +10,7 @@ type Props = {
   slot: {
     number: number;
     status: string;
-    //status: "free" | "occupied";
+    //status: "free" | "occupied" | "reserved";
     student: string | null;
   };
 };
