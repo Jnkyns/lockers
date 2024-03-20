@@ -9,9 +9,11 @@ type Props = {
   letter: string;
   slot: {
     number: number;
-    status: string;
-    //status: "free" | "occupied" | "reserved";
+    status: boolean;
     student: string | null;
+    career: string;
+    mail: string;
+    phone: string;
   };
 };
 
@@ -22,7 +24,7 @@ export default function Locker({ letter, slot }: Props) {
       <li
         className={cn(
           "h-48 rounded-lg p-2 flex justify-center items-center hover:cursor-pointer",
-          slot.status === "free" ? "bg-green-400" : "bg-red-400"
+          slot.status === false ? "bg-green-400" : "bg-red-400"
         )}
         onClick={() => setIsOpen(true)}
       >

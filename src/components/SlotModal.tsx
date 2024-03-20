@@ -12,9 +12,11 @@ type Props = {
   letter: string;
   slot: {
     number: number;
-    status: string;
-    //status: "free" | "occupied";
+    status: boolean;
     student: string | null;
+    career: string;
+    mail: string;
+    phone: number;
   };
 };
 
@@ -30,7 +32,7 @@ export default function SlotModal({ letter, slot }: Props) {
       <div className="space-y-px">
         <h2>Información</h2>
         <DialogDescription>
-          {slot.status === "free"
+          {slot.status === false
             ? "Este casillero esta libre."
             : `Este casillero esta ocupado por ${slot.student}.`}
         </DialogDescription>
