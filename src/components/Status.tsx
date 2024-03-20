@@ -63,21 +63,25 @@ export default function Status({ data }: { data: LockersData }) {
 
   return (
     <div className="mb-8 mx-2 flex flex-col space-y-2">
-      <div className="flex flex-row">
-        <h2>Ingeniería Civil Industrial</h2>
+      <div className="flex flex-row space-x-2">
+        <h2>Ingeniería Civil Industrial:</h2>
         <p>{ici}/20</p>
       </div>
-      <div className="flex flex-row">
-        <h2>Ingeniería Civil en Obras Civiles</h2>
+      <div className="flex flex-row space-x-2">
+        <h2>Ingeniería Civil en Obras Civiles:</h2>
         <p>{oc}/15</p>
       </div>
-      <div className="flex flex-row">
-        <h2>Ingeniería Civil en Informática y Telecomunicaciones</h2>
+      <div className="flex flex-row space-x-2">
+        <h2>Ingeniería Civil en Informática y Telecomunicaciones:</h2>
         <p>{ti}/15</p>
       </div>
-      <div className="flex flex-row">
-        <h2>Ingeniería Civil Plan Común</h2>
+      <div className="flex flex-row space-x-2">
+        <h2>Ingeniería Civil Plan Común:</h2>
         <p>{pc}/10</p>
+      </div>
+      <div className="flex flex-row space-x-2">
+        <h2>Total:</h2>
+        <p>{ici + oc + ti + pc}</p>
       </div>
       <button
         className="border rounded-md h-8 bg-green-500/20"
