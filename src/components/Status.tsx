@@ -2,7 +2,27 @@
 
 import { useState } from "react";
 
-export default function Status({ data }) {
+type LockerSlot = {
+  number: number;
+  status: boolean;
+  student: string;
+  career: string;
+  mail: string;
+  phone: number;
+};
+
+type Locker = {
+  letter: string;
+  location: string;
+  slots: LockerSlot[];
+};
+
+type LockersData = {
+  faculty: string;
+  lockers: Locker[];
+};
+
+export default function Status({ data }: { data: LockersData }) {
   const [ici, setIci] = useState(0);
   const [oc, setOc] = useState(0);
   const [ti, setTi] = useState(0);
