@@ -2,11 +2,44 @@
 
 import { useState } from "react";
 
-export default function Status() {
+export default function Status({ data }) {
   const [ici, setIci] = useState(0);
   const [oc, setOc] = useState(0);
   const [ti, setTi] = useState(0);
   const [pc, setPc] = useState(0);
+
+  const countUsersByCareer = () => {
+    let iciCount = 0;
+    let ocCount = 0;
+    let tiCount = 0;
+    let pcCount = 0;
+
+    data.lockers.forEach((locker) => {
+      locker.slots.forEach((slot) => {
+        switch (slot.career) {
+          case "ICI":
+            iciCount++;
+            break;
+          case "OC":
+            ocCount++;
+            break;
+          case "TI":
+            tiCount++;
+            break;
+          case "PC":
+            pcCount++;
+            break;
+          default:
+            break;
+        }
+      });
+    });
+
+    setIci(iciCount);
+    setOc(ocCount);
+    setTi(tiCount);
+    setPc(pcCount);
+  };
 
   return (
     <div className="mx-2 flex flex-col">
@@ -26,6 +59,12 @@ export default function Status() {
         <h2>Ingeniería Civil Plan Común (9)</h2>
         <p>{pc}</p>
       </div>
+      <button
+        className="border rounded-md"
+        onClick={() => countUsersByCareer()}
+      >
+        Refresh
+      </button>
     </div>
   );
 }
