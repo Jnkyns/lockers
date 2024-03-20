@@ -519,8 +519,8 @@ export default function Home() {
         <h1 className="text-4xl font-extrabold text-center">
           Facultad de Ingeniería y Ciencias
         </h1>
-        <Status data={data} />
       </div>
+      <Status data={data} />
       <div className="flex flex-col space-y-6">
         {data.lockers.map((locker, index) => (
           <div key={index} className="space-y-1">
