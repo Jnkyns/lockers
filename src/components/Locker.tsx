@@ -13,7 +13,7 @@ type Props = {
     student: string | null;
     career: string;
     mail: string;
-    phone: string;
+    phone: number;
   };
 };
 
