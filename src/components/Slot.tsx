@@ -1,20 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 import { Dialog } from "./ui/dialog";
 import SlotModal from "./SlotModal";
-import { cn } from "@/lib/utils";
+import { SlotProps } from "@/utils/data";
 
 type Props = {
   letter: string;
-  slot: {
-    number: number;
-    status: boolean;
-    student: string | null;
-    career: string;
-    mail: string;
-    phone: number;
-  };
+  slot: SlotProps;
 };
 
 export default function Locker({ letter, slot }: Props) {
@@ -23,14 +17,14 @@ export default function Locker({ letter, slot }: Props) {
     <>
       <li
         className={cn(
-          "h-48 rounded-lg p-2 flex justify-center items-center hover:cursor-pointer",
+          "h-32 rounded-lg p-2 flex justify-center items-center hover:cursor-pointer",
           slot.status === false ? "bg-green-400" : "bg-red-400"
         )}
         onClick={() => setIsOpen(true)}
       >
         <h4 className="text-center font-bold4">
           {letter}
-          {slot.number}
+          {slot.number.toString()}
         </h4>
       </li>
 

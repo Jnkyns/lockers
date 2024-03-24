@@ -1,50 +1,31 @@
 "use client";
 
+import { DataProps } from "@/utils/data";
 import { useState } from "react";
 
-type LockerSlot = {
-  number: number;
-  status: boolean;
-  student: string;
-  career: string;
-  mail: string;
-  phone: number;
-};
-
-type Locker = {
-  letter: string;
-  location: string;
-  slots: LockerSlot[];
-};
-
-type LockersData = {
-  faculty: string;
-  lockers: Locker[];
-};
-
-export default function Status({ data }: { data: LockersData }) {
-  const [ici, setIci] = useState(0);
-  const [oc, setOc] = useState(0);
-  const [ti, setTi] = useState(0);
-  const [pc, setPc] = useState(0);
+export default function Status({ data }: { data: DataProps }) {
+  const [ii, setII] = useState(0);
+  const [oc, setOC] = useState(0);
+  const [it, setIT] = useState(0);
+  const [pc, setPC] = useState(0);
 
   const countUsersByCareer = () => {
-    let iciCount = 0;
+    let iiCount = 0;
     let ocCount = 0;
-    let tiCount = 0;
+    let itCount = 0;
     let pcCount = 0;
 
     data.lockers.forEach((locker) => {
       locker.slots.forEach((slot) => {
-        switch (slot.career) {
-          case "ICI":
-            iciCount++;
+        switch (slot.student?.career) {
+          case "II":
+            iiCount++;
             break;
           case "OC":
             ocCount++;
             break;
-          case "TI":
-            tiCount++;
+          case "IT":
+            itCount++;
             break;
           case "PC":
             pcCount++;
@@ -55,33 +36,35 @@ export default function Status({ data }: { data: LockersData }) {
       });
     });
 
-    setIci(iciCount);
-    setOc(ocCount);
-    setTi(tiCount);
-    setPc(pcCount);
+    setII(iiCount);
+    setOC(ocCount);
+    setIT(itCount);
+    setPC(pcCount);
   };
 
   return (
     <div className="mb-8 mx-2 flex flex-col space-y-2">
       <div className="flex flex-row space-x-2">
         <h2>Ingeniería Civil Industrial:</h2>
-        <p>{ici}/20</p>
+        <p>{ii}</p>
       </div>
       <div className="flex flex-row space-x-2">
         <h2>Ingeniería Civil en Obras Civiles:</h2>
-        <p>{oc}/15</p>
+        <p>{oc}</p>
       </div>
       <div className="flex flex-row space-x-2">
         <h2>Ingeniería Civil en Informática y Telecomunicaciones:</h2>
-        <p>{ti}/15</p>
+        <p>{it}</p>
       </div>
       <div className="flex flex-row space-x-2">
         <h2>Ingeniería Civil Plan Común:</h2>
-        <p>{pc}/10</p>
+        <p>{pc}</p>
       </div>
       <div className="flex flex-row space-x-2">
-        <h2>Total:</h2>
-        <p>{ici + oc + ti + pc}</p>
+        <h2>Ocupados:</h2>
+        <p>{ii + oc + it + pc}</p>
+        <h2>Libres:</h2>
+        <p>{60 - (ii + oc + it + pc)}</p>
       </div>
       <button
         className="border rounded-md h-8 bg-green-500/20"
