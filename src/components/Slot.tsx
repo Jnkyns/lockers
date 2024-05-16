@@ -11,13 +11,13 @@ type Props = {
   slot: SlotProps;
 };
 
-export default function Locker({ letter, slot }: Props) {
+export default function Slot({ letter, slot }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <li
         className={cn(
-          "h-32 rounded-lg p-2 flex justify-center items-center hover:cursor-pointer",
+          "h-16 md:h-32 rounded-lg p-2 flex justify-center items-center hover:cursor-pointer",
           slot.status === false ? "bg-green-400" : "bg-red-400"
         )}
         onClick={() => setIsOpen(true)}
