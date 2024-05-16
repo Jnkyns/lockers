@@ -81,7 +81,7 @@ export const data = {
           status: true,
           student: {
             name: "Canelita",
-            career: "PC",
+            career: "ADMIN",
             mail: "admin",
             phone: 912345678,
           },
@@ -639,7 +639,7 @@ export const data = {
           status: true,
           student: {
             name: "Tía del Aseo 1",
-            career: "PC",
+            career: "ADMIN",
             mail: "admin",
             phone: 912345678,
           },
@@ -649,7 +649,7 @@ export const data = {
           status: true,
           student: {
             name: "Tía del Aseo 2",
-            career: "PC",
+            career: "ADMIN",
             mail: "admin",
             phone: 912345678,
           },
