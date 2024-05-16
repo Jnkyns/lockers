@@ -9,7 +9,7 @@ type Props = {
 
 export default function Locker({ locker, children }: Props) {
   return (
-    <div className="flex flex-col space-y-2 justify-between">
+    <div className="flex flex-col space-y-2 justify-between max-w-[28rem]">
       <div className="flex flex-col sm:flex-row sm:space-x-1">
         <h2 className="font-bold">Ubicación:</h2>
         <p className="text-sm text-muted-foreground">{locker.location}</p>

@@ -17,7 +17,7 @@ export default function Slot({ letter, slot }: Props) {
     <>
       <li
         className={cn(
-          "h-16 md:h-32 rounded-lg p-2 flex justify-center items-center hover:cursor-pointer",
+          "h-16 md:h-24 rounded-lg p-2 flex justify-center items-center hover:cursor-pointer",
           slot.status === false ? "bg-green-400" : "bg-red-400"
         )}
         onClick={() => setIsOpen(true)}

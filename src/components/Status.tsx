@@ -54,7 +54,7 @@ export default function Status({ data }: { data: DataProps }) {
 
   return (
     <div className="flex flex-col space-y-2 p-2">
-      <div className="border-b">
+      <div className="border-b p-2">
         <CurrentData careerName="Ing. Civil Industrial" count={ii} />
         <CurrentData careerName="Ing. Civil en Obras Civiles" count={oc} />
         <CurrentData
@@ -66,11 +66,11 @@ export default function Status({ data }: { data: DataProps }) {
       </div>
 
       <div className="flex flex-row space-x-2 justify-between">
-        <CurrentData careerName="Ocupados" count={ii + oc + it + pc + admin} />
         <CurrentData
           careerName="Disponibles"
           count={60 - (ii + oc + it + pc + admin)}
         />
+        <CurrentData careerName="Ocupados" count={ii + oc + it + pc + admin} />
       </div>
     </div>
   );
@@ -84,7 +84,7 @@ function CurrentData({
   count: number;
 }) {
   return (
-    <div className="flex flex-row space-x-2">
+    <div className="flex flex-row justify-between items-center space-x-2">
       <h2>{careerName}:</h2>
       <p>{count}</p>
     </div>
